@@ -10,28 +10,45 @@ Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klar
 
 ## 🚀 Tech Stack
 
-### **Programmiersprachen & Frontend**
-![JavaScript](https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript)
-![TypeScript](https://img.shields.io/badge/TypeScript-000?style=for-the-badge&logo=typescript)
-![Angular](https://img.shields.io/badge/Angular-000?style=for-the-badge&logo=angular)
-![React](https://img.shields.io/badge/React-000?style=for-the-badge&logo=react)
-![Next.js](https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=next.js)
-![HTML](https://img.shields.io/badge/HTML-000?style=for-the-badge&logo=html5)
-![CSS](https://img.shields.io/badge/CSS-000?style=for-the-badge&logo=css3)
-![SCSS](https://img.shields.io/badge/SCSS-000?style=for-the-badge&logo=sass)
+<div align="center">
 
-### **Backend & Datenbanken**
-![Node.js](https://img.shields.io/badge/Node.js-000?style=for-the-badge&logo=node.js)
-![Express](https://img.shields.io/badge/Express-000?style=for-the-badge&logo=express)
-![MongoDB](https://img.shields.io/badge/MongoDB-000?style=for-the-badge&logo=mongodb)
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <h3>💡 Programmiersprachen & Frontend</h3>
+      <br/>
+      <img src="https://img.shields.io/badge/JavaScript-111?style=for-the-badge&logo=javascript" />
+      <img src="https://img.shields.io/badge/TypeScript-111?style=for-the-badge&logo=typescript" />
+      <img src="https://img.shields.io/badge/Angular-111?style=for-the-badge&logo=angular" />
+      <img src="https://img.shields.io/badge/React-111?style=for-the-badge&logo=react" />
+      <img src="https://img.shields.io/badge/Next.js-111?style=for-the-badge&logo=next.js" />
+      <img src="https://img.shields.io/badge/HTML-111?style=for-the-badge&logo=html5" />
+      <img src="https://img.shields.io/badge/CSS-111?style=for-the-badge&logo=css3" />
+      <img src="https://img.shields.io/badge/SCSS-111?style=for-the-badge&logo=sass" />
+    </td>
 
-### **Tools & Sonstiges**
-![Postman](https://img.shields.io/badge/Postman-000?style=for-the-badge&logo=postman)
-![Figma](https://img.shields.io/badge/Figma-000?style=for-the-badge&logo=figma)
-![Vercel](https://img.shields.io/badge/Vercel-000?style=for-the-badge&logo=vercel)
-![Render](https://img.shields.io/badge/Render-000?style=for-the-badge&logo=render)
-![VS Code](https://img.shields.io/badge/VS%20Code-000?style=for-the-badge&logo=visualstudiocode)
-![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github)
+    <td align="center" width="33%">
+      <h3>🛠 Backend & Datenbanken</h3>
+      <br/>
+      <img src="https://img.shields.io/badge/Node.js-111?style=for-the-badge&logo=node.js" />
+      <img src="https://img.shields.io/badge/Express-111?style=for-the-badge&logo=express" />
+      <img src="https://img.shields.io/badge/MongoDB-111?style=for-the-badge&logo=mongodb" />
+    </td>
+
+    <td align="center" width="33%">
+      <h3>🧰 Tools & Sonstiges</h3>
+      <br/>
+      <img src="https://img.shields.io/badge/Postman-111?style=for-the-badge&logo=postman" />
+      <img src="https://img.shields.io/badge/Figma-111?style=for-the-badge&logo=figma" />
+      <img src="https://img.shields.io/badge/Vercel-111?style=for-the-badge&logo=vercel" />
+      <img src="https://img.shields.io/badge/Render-111?style=for-the-badge&logo=render" />
+      <img src="https://img.shields.io/badge/VS%20Code-111?style=for-the-badge&logo=visualstudiocode" />
+      <img src="https://img.shields.io/badge/GitHub-111?style=for-the-badge&logo=github" />
+    </td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
@@ -46,23 +63,36 @@ Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klar
 
 ---
 
-## 📊 GitHub Stats
+## 📊 GitHub Overview
 
 <div align="center">
 
-![Stats](https://github-readme-stats.vercel.app/api?username=liliia&show_icons=true&theme=transparent)
-<br/>
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=liliia&layout=compact&theme=transparent)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      
+      <img 
+        src="https://github-readme-stats.vercel.app/api?username=liliia&show_icons=true&theme=transparent" 
+        width="100%"
+      />
+      <br/>
+      <img 
+        src="https://github-readme-stats.vercel.app/api/top-langs/?username=liliia&layout=compact&theme=transparent" 
+        width="100%"
+      />
 
-</div>
+    </td>
 
----
+    <td align="center" width="50%">
+      
+      <img 
+        src="https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg" 
+        width="100%"
+      />
 
-## ✨ Kleine Animation
-
-<div align="center">
-  
-![Coding](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
+    </td>
+  </tr>
+</table>
 
 </div>
 
