@@ -39,7 +39,7 @@ Ich liebe sauberen Code, klare Strukturen und stetiges Lernen – genau das moti
 
 - 💻 Ich arbeite gerne sowohl alleine als auch im Team  
 - 🧘‍♀️ Yoga-Fan & Bücher über Psychologie gehören zu meinem Alltag  
-- 📚 Ich lerne aktuell intensiv **Next.js** und vertiefe meine TypeScript-Kenntnisse  
+- 📚 Ich lerne aktuell intensiv **Angular** und vertiefe meine TypeScript-Kenntnisse  
 - 🎯 Ich möchte nützliche, funktionale und ästhetisch klare digitale Produkte erstellen  
 - 👩‍💼 Ich arbeite strukturiert, organisiert und mit viel Verantwortung  
 - 🌱 Ich freue mich über neue Projekte, Kontakte und berufliche Chancen  
@@ -70,12 +70,13 @@ Ich liebe sauberen Code, klare Strukturen und stetiges Lernen – genau das moti
 
 ## 📬 Kontakt
 
-📧 E-Mail: *deine Mail hier*  
-🔗 LinkedIn: *Link hier*  
+📧 E-Mail: risinaliliia@gmail.com
+🔗 LinkedIn: www.linkedin.com/in/liliiarisina
 
 ---
 
 Danke fürs Vorbeischauen – fühl dich frei, meine Projekte anzuschauen oder mir zu schreiben! 😊
+
 
 ## 📌 Projekte (Auswahl)
 
