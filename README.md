@@ -55,6 +55,5 @@ Danke fürs Vorbeischauen – schreib mir gern, wenn du dich vernetzen möchtest
 
 ---
 
-📌 Projekte (Auswahl)
 
 
