@@ -1,16 +1,78 @@
-## Hi there 👋
+# 👋 Hallo, ich bin **Liliia**
 
-<!--
-**RisinaLiliia/RisinaLiliia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Junior Full Stack Developer • React • Next.js • TypeScript • Node.js
 
-Here are some ideas to get you started:
+Willkommen auf meinem Profil!  
+Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klare und benutzerfreundliche Webanwendungen zu bauen.  
+Ich liebe sauberen Code, klare Strukturen und stetiges Lernen – genau das motiviert mich jeden Tag.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 🚀 Tech Stack
+
+![JavaScript](https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript)
+![TypeScript](https://img.shields.io/badge/TypeScript-000?style=for-the-badge&logo=typescript)
+![React](https://img.shields.io/badge/React-000?style=for-the-badge&logo=react)
+![Next.js](https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=next.js)
+![Node.js](https://img.shields.io/badge/Node.js-000?style=for-the-badge&logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-000?style=for-the-badge&logo=mongodb)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-000?style=for-the-badge&logo=tailwindcss)
+![Redux](https://img.shields.io/badge/Redux_Toolkit-000?style=for-the-badge&logo=redux)
+
+---
+
+## 🌿 Über mich
+
+- 💻 Ich arbeite gerne sowohl alleine als auch im Team  
+- 🧘‍♀️ Yoga-Fan & Bücher über Psychologie gehören zu meinem Alltag  
+- 📚 Ich lerne aktuell intensiv **Next.js** und vertiefe meine TypeScript-Kenntnisse  
+- 🎯 Ich möchte nützliche, funktionale und ästhetisch klare digitale Produkte erstellen  
+- 👩‍💼 Ich arbeite strukturiert, organisiert und mit viel Verantwortung  
+- 🌱 Ich freue mich über neue Projekte, Kontakte und berufliche Chancen  
+
+---
+
+## 📌 Projekte (Auswahl)
+
+### **CRM for Vendors** – Next.js Projekt (läuft aktuell)  
+Ein modernes CRM für Lieferantenverwaltung – cleanes UI, responsive Design und optimierte Strukturen.
+
+### **Contact Management App**  
+User-Auth, CRUD, protected routes, Form-Handling – alles drin.  
+Stack: React, Redux Toolkit, JWT, Formik, Material UI.
+
+### **Tasteorama** (Teamprojekt)  
+Rezepte suchen, speichern und verwalten – modern, funktional und gut strukturiert.
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+![Stats](https://github-readme-stats.vercel.app/api?username=liliia&show_icons=true&theme=transparent)
+<br/>
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=liliia&layout=compact&theme=transparent)
+
+</div>
+
+---
+
+## ✨ Kleine Animation
+
+<div align="center">
+  
+![Coding](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
+
+</div>
+
+---
+
+## 📬 Kontakt
+
+📧 E-Mail: *deine Mail hier*  
+🔗 LinkedIn: *Link hier*  
+
+---
+
+Danke fürs Vorbeischauen – fühl dich frei, meine Projekte anzuschauen oder mir zu schreiben! 😊
