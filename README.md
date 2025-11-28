@@ -56,21 +56,5 @@ Danke fürs Vorbeischauen – schreib mir gern, wenn du dich vernetzen möchtest
 ---
 
 📌 Projekte (Auswahl)
-<div align="center">
 
-<!-- Bounce Arrow -->
-<svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(0,0)">
-    <path d="M12 5v14" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M6 13l6 6 6-6" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    <!-- animate the whole group up/down -->
-    <animateTransform attributeName="transform"
-                      type="translate"
-                      values="0 0; 0 6; 0 0"
-                      dur="1.2s"
-                      repeatCount="indefinite"/>
-  </g>
-</svg>
-
-</div>
 
