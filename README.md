@@ -1,10 +1,10 @@
 # 👋 Hallo, ich bin **Liliia**
 
-### Junior Full Stack Developer •JavaScript • React • Next.js • TypeScript • Node.js • Angular (lerne ich gerade)
+### Junior Full Stack Developer •JavaScript • React • Next.js • TypeScript • Node.js • Angular
 
 Willkommen auf meinem Profil!  
-Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klare und benutzerfreundliche Webanwendungen zu bauen.  
-Ich liebe sauberen Code, klare Strukturen und stetiges Lernen – genau das motiviert mich jeden Tag. 
+
+Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klare und benutzerfreundliche Webanwendungen zu bauen. Ich liebe sauberen Code, klare Strukturen und stetiges Lernen – genau das motiviert mich jeden Tag. 
 
 ---
 
@@ -79,15 +79,4 @@ Danke fürs Vorbeischauen – fühl dich frei, meine Projekte anzuschauen oder m
 
 
 ## 📌 Projekte (Auswahl)
-
-### **CRM for Vendors** – Next.js Projekt (läuft aktuell)  
-Ein modernes CRM für Lieferantenverwaltung – cleanes UI, responsive Design und optimierte Strukturen.
-
-### **Contact Management App**  
-User-Auth, CRUD, protected routes, Form-Handling – alles drin.  
-Stack: React, Redux Toolkit, JWT, Formik, Material UI.
-
-### **Tasteorama** (Teamprojekt)  
-Rezepte suchen, speichern und verwalten – modern, funktional und gut strukturiert.
-
 ---
