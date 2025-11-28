@@ -1,4 +1,4 @@
-# 👋 Hallo, ich bin **Liliia**
+# 👋 Hallo, ich bin **Liliia!**
 
 ### Junior Full-Stack-Entwicklerin • JavaScript • React • Next.js • TypeScript • Node.js • Angular
 
