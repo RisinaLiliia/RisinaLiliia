@@ -21,10 +21,10 @@ Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klar
 
 
 - 💻 Ich arbeite gerne sowohl alleine als auch im Team  
-- 📚 Aktuell vertiefe ich intensiv meine Angular- und TypeScript-Kenntnisse.
-- 🎯 Mein Ziel: moderne, klare und nutzerfreundliche Produkte entwickeln   
+- 📚 Aktuell vertiefe ich intensiv meine Angular- und TypeScript-Kenntnisse
+- 🎯 Mein Fokus liegt darauf, moderne, klare und nutzerfreundliche Produkte zu entwickeln  
 - 👩‍💼 Strukturiert, verantwortungsbewusst und immer offen für neue Herausforderungen  
-- 🧘‍♀️ Yoga-Fan & Bücher über Psychologie gehören zu meinem Alltag  
+- 🧘‍♀️ Bücher über Psychologie gehören zu meinem Alltag
 - 🌱 Ich freue mich über neue Projekte, Kontakte und berufliche Chancen
  
 
