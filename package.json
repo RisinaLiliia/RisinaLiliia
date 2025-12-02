@@ -3,9 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "description": "### Junior Full-Stack-Entwicklerin • JavaScript • React • Next.js • TypeScript • Node.js • Angular",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "Liliia Risina <risinalilia2@gmail.com>",
@@ -13,5 +14,8 @@
   "dependencies": {
     "express": "^5.2.1",
     "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
