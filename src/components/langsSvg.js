@@ -9,23 +9,23 @@ const palette = [
 
 export const generateLangsSVG = (langs) => {
   const total = langs.reduce((sum, [, count]) => sum + count, 0);
-  const height = 180 + langs.length * 26;
+  const width = 600;
+  const height = 220 + langs.length * 40;
 
   const barSegments = langs
     .map(([lang, count], i) => {
       const percent = (count / total) * 100;
-      const width = (percent * 260) / 100;
-
+      const barWidth = (percent * 400) / 100;
+      const offset = langs
+        .slice(0, i)
+        .reduce((sum, [, c]) => sum + (c / total) * 400, 0);
       return `
         <rect 
-          x="${
-            20 +
-            langs.slice(0, i).reduce((sum, [, c]) => sum + (c / total) * 260, 0)
-          }"
-          y="55"
-          width="${width}"
-          height="10"
-          rx="5"
+          x="${30 + offset}"
+          y="65"
+          width="${barWidth}"
+          height="14"
+          rx="7"
           fill="${palette[i % palette.length]}"
         />
       `;
@@ -36,13 +36,12 @@ export const generateLangsSVG = (langs) => {
     .map(([lang, count], i) => {
       const percent = ((count / total) * 100).toFixed(2);
       return `
-        <circle cx="35" cy="${105 + i * 26}" r="6" fill="${
+        <circle cx="40" cy="${120 + i * 40}" r="8" fill="${
         palette[i % palette.length]
       }" />
-        <text x="50" y="${110 + i * 26}" 
-              font-size="13" 
-              font-family="Inter, Segoe UI, sans-serif"
-              fill="#2c3e50">
+        <text x="60" y="${
+          125 + i * 40
+        }" font-size="16" font-family="Inter, Segoe UI, sans-serif" fill="#2c3e50">
           ${lang} — ${percent}%
         </text>
       `;
@@ -50,35 +49,22 @@ export const generateLangsSVG = (langs) => {
     .join("");
 
   return `
-<svg width="420" height="${height}" xmlns="http://www.w3.org/2000/svg">
-
+<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .card {
-      fill: #ffffff;
-      stroke: #e5e7eb;
-      stroke-width: 1.2;
-      rx: 14;
-    }
-    .title {
-      font: 700 20px 'Inter', 'Segoe UI', sans-serif;
-      fill: #2563eb;
-    }
+    .card { fill: #ffffff; stroke: #e5e7eb; stroke-width: 1.5; rx: 16; }
+    .title { font: 700 28px 'Inter', 'Segoe UI', sans-serif; fill: #2563eb; }
   </style>
 
-  <rect class="card" x="0" y="0" width="420" height="${height}" />
+  <rect class="card" x="0" y="0" width="${width}" height="${height}" />
 
-  <!-- Заголовок -->
-  <text x="210" y="32" text-anchor="middle" class="title">
+  <text x="${width / 2}" y="40" text-anchor="middle" class="title">
     Most Used Languages
   </text>
 
-  <!-- График -->
-  <rect x="20" y="55" width="260" height="10" rx="5" fill="#e5e7eb" />
+  <rect x="30" y="65" width="400" height="14" rx="7" fill="#e5e7eb" />
   ${barSegments}
 
-  <!-- Список языков -->
   ${rows}
-
 </svg>
 `;
 };
