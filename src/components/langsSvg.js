@@ -9,7 +9,6 @@ const palette = [
 
 export const generateLangsSVG = (langs) => {
   const padTop = 32;
-
   const total = langs.reduce((sum, [, count]) => sum + count, 0);
   const width = 600;
   const height = 220 + langs.length * 40;
@@ -49,9 +48,7 @@ export const generateLangsSVG = (langs) => {
         <text 
           x="60" 
           y="${padTop + 125 + i * 40}" 
-          font-size="18" 
-          font-family="Inter, Segoe UI, sans-serif" 
-          fill="#2c3e50"
+          class="label"
         >
           ${lang} — ${percent}%
         </text>
@@ -65,13 +62,14 @@ export const generateLangsSVG = (langs) => {
   }" xmlns="http://www.w3.org/2000/svg">
   <style>
     .card { fill: #ffffff; stroke: #e5e7eb; stroke-width: 1.5; rx: 16; }
-    .title { font: 700 28px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
+    .title { font: 700 20px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
+    .label { font: 400 18px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
   </style>
 
   <rect class="card" x="0" y="0" width="${width}" height="${height + padTop}" />
 
   <text x="${width / 2}" y="${padTop + 50}" text-anchor="middle" class="title">
-   Meistverwendete Sprachen
+    Meistverwendete Sprachen
   </text>
 
   <rect 
