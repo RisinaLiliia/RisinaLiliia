@@ -32,9 +32,18 @@ Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klar
 
 📊 GitHub Stats
 
-<div align="center"> <img src="https://github-readme-stats.vercel.app/api?username=RisinaLiliia&show_icons=true&theme=transparent" height="160" /> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RisinaLiliia&layout=compact&theme=transparent" height="160" /> </div> <div align="center">
-
+<div align="center">
+  <img 
+    src="https://risina-liliia-git-main-risina-liliias-projects.vercel.app/api/stats?username=RisinaLiliia" 
+    height="160" 
+  />
+  <img 
+    src="https://risina-liliia-git-main-risina-liliias-projects.vercel.app/api/top-langs?username=RisinaLiliia" 
+    height="160" 
+  />
 </div>
+
+
 
 <div align="center">
   
