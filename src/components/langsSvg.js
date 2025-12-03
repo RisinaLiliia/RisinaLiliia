@@ -65,7 +65,7 @@ export const generateLangsSVG = (langs) => {
   }" xmlns="http://www.w3.org/2000/svg">
   <style>
     .card { fill: #ffffff; stroke: #e5e7eb; stroke-width: 1.5; rx: 16; }
-    .title { font: 700 28px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
+    .title { font: 700 20px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
   </style>
 
   <rect class="card" x="0" y="0" width="${width}" height="${height + padTop}" />
