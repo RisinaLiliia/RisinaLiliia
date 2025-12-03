@@ -35,7 +35,7 @@ export const generateStatsSVG = (username, stats) => {
         </text>
         <text x="${x + 80}" y="${
         y + 60
-      }" font-size="16" font-family="Inter, Segoe UI, sans-serif" fill="#333" text-anchor="middle">
+      }" font-size="18" font-family="Inter, Segoe UI, sans-serif" fill="#333" text-anchor="middle">
           ${d.label}
         </text>
       `;

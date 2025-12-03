@@ -49,7 +49,7 @@ export const generateLangsSVG = (langs) => {
         <text 
           x="60" 
           y="${padTop + 125 + i * 40}" 
-          font-size="16" 
+          font-size="18" 
           font-family="Inter, Segoe UI, sans-serif" 
           fill="#2c3e50"
         >
