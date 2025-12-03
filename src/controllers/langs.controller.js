@@ -30,6 +30,6 @@ export const getTopLangs = async (req, res) => {
 const sendSvg = (res, svg) => {
   res.setHeader("Content-Type", "image/svg+xml");
   res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
-
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.send(svg);
 };
