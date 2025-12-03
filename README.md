@@ -33,8 +33,8 @@ Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klar
 📊 GitHub Stats
 
 <div align="center">
-  <img src="https://risinaliliia.onrender.com/api/stats?username=RisinaLiliia" height="160" />
-  <img src="https://risinaliliia.onrender.com/api/top-langs?username=RisinaLiliia" height="160" />
+  <img src="https://risinaliliia.onrender.com/api/stats?username=RisinaLiliia" height="220" />
+  <img src="https://risinaliliia.onrender.com/api/top-langs?username=RisinaLiliia" height="220" />
 </div>
 
 <div align="center">
