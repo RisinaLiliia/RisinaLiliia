@@ -1,3 +1,12 @@
+const palette = [
+  "#F1C40F",
+  "#3498DB",
+  "#9B59B6",
+  "#E74C3C",
+  "#1ABC9C",
+  "#E67E22",
+];
+
 export const generateStatsSVG = (username, stats) => {
   const padTop = 32;
 
@@ -30,9 +39,7 @@ export const generateStatsSVG = (username, stats) => {
     .join("");
 
   return `
-<svg width="${width}" height="${
-    height + padTop
-  }" xmlns="http://www.w3.org/2000/svg">
+<svg width="${width}" height="${height + padTop}" xmlns="http://www.w3.org/2000/svg">
   <style>
     .card { fill: #ffffff; stroke: #e5e7eb; stroke-width: 1.5; rx: 16; }
     .title { font: 700 20px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
