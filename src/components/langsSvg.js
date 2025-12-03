@@ -71,7 +71,7 @@ export const generateLangsSVG = (langs) => {
   <rect class="card" x="0" y="0" width="${width}" height="${height + padTop}" />
 
   <text x="${width / 2}" y="${padTop + 50}" text-anchor="middle" class="title">
-    Most Used Languages
+   Meistverwendete Sprachen
   </text>
 
   <rect 
