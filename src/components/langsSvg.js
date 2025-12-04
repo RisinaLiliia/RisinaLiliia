@@ -6,7 +6,10 @@ export const generateLangsSVG = (langs) => {
   const total = langs.reduce((sum, [, count]) => sum + count, 0);
 
   const width = 600;
-  const height = 200 + langs.length * 40;
+  const desiredHeight = 340;
+  const dynamicHeight = 200 + langs.length * 40;
+
+  const height = Math.max(desiredHeight, dynamicHeight);
 
   const barSegments = langs
     .map(([lang, count], i) => {
