@@ -1,30 +1,25 @@
-const palette = [
-  "#F1C40F",
-  "#3498DB",
-  "#9B59B6",
-  "#E74C3C",
-  "#1ABC9C",
-  "#E67E22",
-];
+import { palette, svgBaseStyle, svgPadding } from "../shared/svgTheme.js";
 
 export const generateLangsSVG = (langs) => {
-  const padTop = 32;
+  const { top, left } = svgPadding;
+
   const total = langs.reduce((sum, [, count]) => sum + count, 0);
+
   const width = 600;
-  const height = 220 + langs.length * 40;
+  const height = 200 + langs.length * 40;
 
   const barSegments = langs
     .map(([lang, count], i) => {
-      const percent = (count / total) * 100;
-      const barWidth = (percent * 400) / 100;
+      const percent = count / total;
+      const barWidth = percent * 400;
       const offset = langs
         .slice(0, i)
         .reduce((sum, [, c]) => sum + (c / total) * 400, 0);
 
       return `
         <rect 
-          x="${30 + offset}"
-          y="${padTop + 80}"
+          x="${left + offset}"
+          y="${top + 80}"
           width="${barWidth}"
           height="14"
           rx="7"
@@ -39,42 +34,29 @@ export const generateLangsSVG = (langs) => {
       const percent = ((count / total) * 100).toFixed(2);
 
       return `
-        <circle 
-          cx="40" 
-          cy="${padTop + 120 + i * 40}" 
-          r="8" 
-          fill="${palette[i % palette.length]}" 
-        />
-        <text 
-          x="60" 
-          y="${padTop + 125 + i * 40}" 
-          class="label"
-        >
-          ${lang} — ${percent}%
-        </text>
+        <circle cx="40" cy="${top + 130 + i * 40}" r="8" fill="${
+        palette[i % palette.length]
+      }" />
+        <text x="60" y="${
+          top + 135 + i * 40
+        }" class="label">${lang} — ${percent}%</text>
       `;
     })
     .join("");
 
   return `
-<svg width="${width}" height="${
-    height + padTop
-  }" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .card { fill: #ffffff; stroke: #e5e7eb; stroke-width: 1.5; rx: 16; }
-    .title { font: 700 20px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
-    .label { font: 400 18px 'Inter', 'Segoe UI', sans-serif; fill: #2c3e50; }
-  </style>
+<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+  <style>${svgBaseStyle}</style>
 
-  <rect class="card" x="0" y="0" width="${width}" height="${height + padTop}" />
+  <rect class="card" x="0" y="0" width="${width}" height="${height}" />
 
-  <text x="${width / 2}" y="${padTop + 50}" text-anchor="middle" class="title">
+  <text x="${width / 2}" y="${top + 30}" text-anchor="middle" class="title">
     Meistverwendete Sprachen
   </text>
 
   <rect 
-    x="30" 
-    y="${padTop + 80}" 
+    x="${left}" 
+    y="${top + 80}" 
     width="400" 
     height="14" 
     rx="7" 
