@@ -17,9 +17,7 @@ export const getTopLangs = async (req, res) => {
     stats[r.language] = (stats[r.language] || 0) + 1;
   });
 
-  const sorted = Object.entries(stats)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 6);
+  const sorted = Object.entries(stats).sort((a, b) => b[1] - a[1]);
 
   const svg = generateLangsSVG(sorted);
   setCache(cacheKey, svg);
