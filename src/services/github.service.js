@@ -41,3 +41,20 @@ export async function getRepos(username) {
 
   return res.json();
 }
+
+export async function getRepoLanguages(username, repoName) {
+  const res = await fetch(
+    `${GH_BASE}/repos/${username}/${repoName}/languages`,
+    {
+      headers,
+    }
+  );
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error(`GitHub API Error (getRepoLanguages: ${repoName}):`, text);
+    return {};
+  }
+
+  return res.json();
+}

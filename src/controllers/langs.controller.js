@@ -1,4 +1,4 @@
-import { getRepos } from "../services/github.service.js";
+import { getRepos, getRepoLanguages } from "../services/github.service.js";
 import { getCache, setCache } from "../utils/cache.js";
 import { generateLangsSVG } from "../components/langsSvg.js";
 
@@ -12,15 +12,18 @@ export const getTopLangs = async (req, res) => {
   const repos = await getRepos(username);
 
   const stats = {};
-  repos.forEach((r) => {
-    if (!r.language) return;
-    stats[r.language] = (stats[r.language] || 0) + 1;
-  });
+  for (const repo of repos) {
+    const languages = await getRepoLanguages(username, repo.name);
+    for (const [lang, bytes] of Object.entries(languages)) {
+      stats[lang] = (stats[lang] || 0) + bytes;
+    }
+  }
 
-  const totalRepos = repos.length;
   const sorted = Object.entries(stats)
-    .filter(([lang, count]) => (count / totalRepos) * 100 >= 1)
-    .sort((a, b) => b[1] - a[1]);
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6);
+
+  console.log("Sorted languages ​​for SVG:", sorted);
 
   const svg = generateLangsSVG(sorted);
   setCache(cacheKey, svg);
