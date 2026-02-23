@@ -17,14 +17,14 @@ Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klar
 
 
 
-🌿 Über mich
+🌿 In den letzten Monaten habe ich an meinem Projekt De’ciZhen gearbeitet – einer Full-Stack Marketplace-Plattform, die ich selbst entwickle.
 
+**Tech Stack:**  
+TypeScript · Next.js · React · Node.js · NestJS · MongoDB · Redis
 
-- 🎯 Mein Fokus liegt darauf, moderne, klare und nutzerfreundliche Produkte zu entwickeln  
-- 👩‍💼 Strukturiert, verantwortungsbewusst und immer offen für neue Herausforderungen  
-- 🧘‍♀️ Bücher über Psychologie gehören zu meinem Alltag
-- 🌱 Ich freue mich über neue Projekte, Kontakte und berufliche Chancen
- 
+🔗 **Live Demo:** https://frontend-de-ci-zhen.vercel.app/  
+🔗 **Frontend:** https://github.com/RisinaLiliia/frontend-De-ciZhen  
+🔗 **Backend:** https://github.com/RisinaLiliia/Backend-De-ciZhen  
 
 ---
 
