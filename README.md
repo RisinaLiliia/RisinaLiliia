@@ -17,7 +17,7 @@ Ich bin eine detailorientierte Entwicklerin, die Freude daran hat, moderne, klar
 
 
 
-🌿 In den letzten Monaten habe ich an meinem Projekt De’ciZhen gearbeitet – einer Full-Stack Marketplace-Plattform, die ich selbst entwickle.
+Derzeit vertiefe ich meine Full-Stack-Entwicklungskenntnisse durch die Entwicklung meines eigenen Projekts De’ciZhen – einer Marketplace-Plattform, die ich eigenständig von Frontend bis Backend entwickle.
 
 **Tech Stack:**  
 TypeScript · Next.js · React · Node.js · NestJS · MongoDB · Redis
