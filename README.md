@@ -42,7 +42,7 @@ TypeScript · Next.js · React · Node.js · NestJS · MongoDB · Redis
 📬 Kontakt
 
 
-📧 **E-Mail:** risinaliliia@gmail.com  
+📧 **E-Mail:** liliia.risina@gmail.com
 🔗 **LinkedIn:** https://www.linkedin.com/in/liliiarisina  
 
 
