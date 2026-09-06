@@ -17,7 +17,6 @@ const headers = {
   "X-GitHub-Api-Version": "2022-11-28",
 };
 
-// Максимальное число одновременных запросов к GitHub API
 const MAX_CONCURRENT_GITHUB_REQUESTS = 5;
 
 let activeRequests = 0;
@@ -58,7 +57,6 @@ async function githubFetch(url) {
 
   const controller = new AbortController();
 
-  // Не разрешаем GitHub запросу висеть бесконечно
   const timeout = setTimeout(() => {
     controller.abort();
   }, 8000);
@@ -69,13 +67,6 @@ async function githubFetch(url) {
       signal: controller.signal,
     });
 
-    /*
-     * GitHub обычно возвращает:
-     * 403 или 429 при rate limiting.
-     *
-     * x-ratelimit-remaining === "0"
-     * дополнительно подтверждает исчерпание quota.
-     */
     const remaining = res.headers.get("x-ratelimit-remaining");
 
     if (
