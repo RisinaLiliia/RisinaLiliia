@@ -4,11 +4,9 @@ import langsRoutes from "./routes/langs.routes.js";
 
 const app = express();
 
-// Render работает через reverse proxy.
-// Это необходимо для корректного req.ip.
+
 app.set("trust proxy", 1);
 
-// Не раскрываем лишнюю информацию о технологии.
 app.disable("x-powered-by");
 
 app.get("/", (req, res) => {
@@ -27,16 +25,11 @@ app.get("/", (req, res) => {
 app.use("/api/stats", statsRoutes);
 app.use("/api/top-langs", langsRoutes);
 
-// 404
 app.use((req, res) => {
   res.status(404).send("Not found");
 });
 
-// ВАЖНО:
-// Express определяет error middleware именно по 4 аргументам:
-// err, req, res, next
 app.use((err, req, res, next) => {
-  // Не выводим stack trace или содержимое секретов клиенту.
   console.error("Unhandled application error:", {
     message: err?.message || "Unknown error",
     method: req.method,
