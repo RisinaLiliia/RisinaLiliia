@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+iimport fetch from "node-fetch";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -11,17 +11,106 @@ if (!process.env.GH_TOKEN) {
 }
 
 const headers = {
-  Authorization: `token ${process.env.GH_TOKEN}`,
+  Authorization: `Bearer ${process.env.GH_TOKEN}`,
   "User-Agent": "Render-GitHub-Stats",
-  Accept: "application/vnd.github.v3+json",
+  Accept: "application/vnd.github+json",
+  "X-GitHub-Api-Version": "2022-11-28",
 };
 
+// Максимальное число одновременных запросов к GitHub API
+const MAX_CONCURRENT_GITHUB_REQUESTS = 5;
+
+let activeRequests = 0;
+const waitingRequests = [];
+
+export class GitHubRateLimitError extends Error {
+  constructor(message = "GitHub API rate limit reached") {
+    super(message);
+    this.name = "GitHubRateLimitError";
+  }
+}
+
+async function acquireSlot() {
+  if (activeRequests < MAX_CONCURRENT_GITHUB_REQUESTS) {
+    activeRequests++;
+    return;
+  }
+
+  await new Promise((resolve) => {
+    waitingRequests.push(resolve);
+  });
+
+  activeRequests++;
+}
+
+function releaseSlot() {
+  activeRequests--;
+
+  const next = waitingRequests.shift();
+
+  if (next) {
+    next();
+  }
+}
+
+async function githubFetch(url) {
+  await acquireSlot();
+
+  const controller = new AbortController();
+
+  // Не разрешаем GitHub запросу висеть бесконечно
+  const timeout = setTimeout(() => {
+    controller.abort();
+  }, 8000);
+
+  try {
+    const res = await fetch(url, {
+      headers,
+      signal: controller.signal,
+    });
+
+    /*
+     * GitHub обычно возвращает:
+     * 403 или 429 при rate limiting.
+     *
+     * x-ratelimit-remaining === "0"
+     * дополнительно подтверждает исчерпание quota.
+     */
+    const remaining = res.headers.get("x-ratelimit-remaining");
+
+    if (
+      res.status === 429 ||
+      (res.status === 403 && remaining === "0")
+    ) {
+      throw new GitHubRateLimitError();
+    }
+
+    return res;
+  } catch (error) {
+    if (error.name === "AbortError") {
+      throw new Error("GitHub API request timed out");
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+    releaseSlot();
+  }
+}
+
 export async function getUser(username) {
-  const res = await fetch(`${GH_BASE}/users/${username}`, { headers });
+  const res = await githubFetch(
+    `${GH_BASE}/users/${encodeURIComponent(username)}`
+  );
 
   if (!res.ok) {
     const text = await res.text();
-    console.error("GitHub API Error (getUser):", text);
+
+    console.error(
+      `GitHub API Error (getUser): ${res.status}`,
+      text
+    );
+
     throw new Error(`GitHub API error: ${res.status}`);
   }
 
@@ -29,13 +118,20 @@ export async function getUser(username) {
 }
 
 export async function getRepos(username) {
-  const res = await fetch(`${GH_BASE}/users/${username}/repos?per_page=100`, {
-    headers,
-  });
+  const res = await githubFetch(
+    `${GH_BASE}/users/${encodeURIComponent(
+      username
+    )}/repos?per_page=100&type=owner`
+  );
 
   if (!res.ok) {
     const text = await res.text();
-    console.error("GitHub API Error (getRepos):", text);
+
+    console.error(
+      `GitHub API Error (getRepos): ${res.status}`,
+      text
+    );
+
     throw new Error(`GitHub API error: ${res.status}`);
   }
 
@@ -43,16 +139,20 @@ export async function getRepos(username) {
 }
 
 export async function getRepoLanguages(username, repoName) {
-  const res = await fetch(
-    `${GH_BASE}/repos/${username}/${repoName}/languages`,
-    {
-      headers,
-    }
+  const res = await githubFetch(
+    `${GH_BASE}/repos/${encodeURIComponent(
+      username
+    )}/${encodeURIComponent(repoName)}/languages`
   );
 
   if (!res.ok) {
     const text = await res.text();
-    console.error(`GitHub API Error (getRepoLanguages: ${repoName}):`, text);
+
+    console.error(
+      `GitHub API Error (getRepoLanguages: ${repoName}): ${res.status}`,
+      text
+    );
+
     return {};
   }
 
