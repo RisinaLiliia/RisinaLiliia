@@ -5,7 +5,6 @@ import { getTopLangs } from "../controllers/langs.controller.js";
 const router = express.Router();
 
 const WINDOW_MS = 60 * 1000;
-
 const MAX_REQUESTS_PER_WINDOW = 20;
 
 const requestsByIp = new Map();
@@ -13,15 +12,12 @@ const requestsByIp = new Map();
 function rateLimit(req, res, next) {
   const now = Date.now();
 
-  const ip =
-    req.ip ||
-    req.headers["x-forwarded-for"] ||
-    req.socket.remoteAddress ||
-    "unknown";
+
+  const ip = req.ip;
 
   const current = requestsByIp.get(ip);
 
-  if (!current || now > current.resetAt) {
+  if (!current || now >= current.resetAt) {
     requestsByIp.set(ip, {
       count: 1,
       resetAt: now + WINDOW_MS,
@@ -33,8 +29,9 @@ function rateLimit(req, res, next) {
   current.count++;
 
   if (current.count > MAX_REQUESTS_PER_WINDOW) {
-    const retryAfterSeconds = Math.ceil(
-      (current.resetAt - now) / 1000
+    const retryAfterSeconds = Math.max(
+      1,
+      Math.ceil((current.resetAt - now) / 1000)
     );
 
     res.setHeader("Retry-After", retryAfterSeconds);
@@ -42,18 +39,21 @@ function rateLimit(req, res, next) {
     return res.status(429).send("Too many requests");
   }
 
-  next();
+  return next();
 }
 
-setInterval(() => {
+
+const cleanupTimer = setInterval(() => {
   const now = Date.now();
 
   for (const [ip, data] of requestsByIp.entries()) {
-    if (now > data.resetAt) {
+    if (now >= data.resetAt) {
       requestsByIp.delete(ip);
     }
   }
-}, WINDOW_MS).unref();
+}, WINDOW_MS);
+
+cleanupTimer.unref?.();
 
 router.get("/", rateLimit, asyncHandler(getTopLangs));
 
