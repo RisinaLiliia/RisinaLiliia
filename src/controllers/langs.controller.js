@@ -7,21 +7,17 @@ import {
 import { getCache, setCache } from "../utils/cache.js";
 import { generateLangsSVG } from "../components/langsSvg.js";
 
-// Если несколько запросов одновременно запрашивают одного пользователя,
-// GitHub API будет вызван только один раз.
 const inFlightRequests = new Map();
 
 export const getTopLangs = async (req, res) => {
   const username = String(req.query.username || "RisinaLiliia").trim();
 
-  // Простая проверка GitHub username
   if (!/^[a-zA-Z0-9-]{1,39}$/.test(username)) {
     return res.status(400).send("Invalid GitHub username");
   }
 
   const cacheKey = `langs_${username.toLowerCase()}`;
 
-  // 1. Сначала проверяем обычный cache
   const cached = getCache(cacheKey);
 
   if (cached) {
@@ -29,14 +25,12 @@ export const getTopLangs = async (req, res) => {
   }
 
   try {
-    // 2. Если такой username уже загружается —
-    // не запускаем ещё 100 GitHub запросов, а ждём существующий Promise.
+  
     if (inFlightRequests.has(cacheKey)) {
       const svg = await inFlightRequests.get(cacheKey);
       return sendSvg(res, svg);
     }
 
-    // 3. Создаём только одну загрузку для username
     const requestPromise = buildLanguagesSvg(username, cacheKey);
 
     inFlightRequests.set(cacheKey, requestPromise);
@@ -53,7 +47,6 @@ export const getTopLangs = async (req, res) => {
 
     return res.status(500).send("Failed to generate language statistics");
   } finally {
-    // Удаляем только после завершения запроса
     inFlightRequests.delete(cacheKey);
   }
 };
@@ -69,8 +62,7 @@ async function buildLanguagesSvg(username, cacheKey) {
     try {
       languages = await getRepoLanguages(username, repo.name);
     } catch (error) {
-      // Если GitHub сообщил о rate limit —
-      // прекращаем цикл сразу.
+     
       if (error instanceof GitHubRateLimitError) {
         throw error;
       }
