@@ -4,11 +4,14 @@ import langsRoutes from "./routes/langs.routes.js";
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 app.get("/", (req, res) =>
   res.send(`
     <h2 style="text-align:center;margin-top:50px;font-family:sans-serif;">
       GitHub Stats API
     </h2>
+
     <p style="text-align:center;">
       /api/stats?username=User<br>
       /api/top-langs?username=User
